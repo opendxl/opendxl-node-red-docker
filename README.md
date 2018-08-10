@@ -1,1 +1,22 @@
-# opendxl-node-red-docker
+# OpenDXL Node-RED Docker
+[![Docker Build Status](https://img.shields.io/docker/build/opendxl/opendxl-node-red-docker.svg)](https://hub.docker.com/r/opendxl/opendxl-node-red-docker/)
+
+## Overview
+
+This repository contains the files necessary to build a [Docker](https://www.docker.com/) image that consists of the core [Node-RED](https://nodered.org/) installation along with a set of standard OpenDXL Node-RED extensions.
+
+The Docker image also exposes a volume that can be easily mapped via higher-level Docker interfaces (Kitematic, Docker Cloud, etc.). This allows for the Node-RED configuration data to reside external to the Docker containe, allowing upgrades of the Docker image without the loss of configuration information.
+
+## Bugs and Feedback
+
+For bugs, questions and discussions please use the [GitHub Issues](https://github.com/opendxl/opendxl-node-red-docker/issues).
+
+## LICENSE
+
+Copyright 2018 McAfee, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
