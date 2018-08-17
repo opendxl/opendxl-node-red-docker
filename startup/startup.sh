@@ -1,6 +1,7 @@
 #!/bin/bash
 
 NR_DXL=@opendxl/node-red-contrib-dxl
+NR_PY2_ENV=node-red-py2-env
 
 #
 # Function that is invoked when the script fails.
@@ -35,6 +36,15 @@ if [ $OUT -ne 0 ];then
 else
     echo "${NR_DXL} is already installed, skipping."
 fi
+
+if [ ! -f ${NR_PY2_ENV}/bin/activate ];then
+    echo "Creating Python virtual environment..."
+    python -m virtualenv ${NR_PY2_ENV} \
+        || { fail "Unable to create Python virtual environment."; }
+fi
+
+source ${NR_PY2_ENV}/bin/activate     \
+    || { fail "Unable to activate Python virtual environment."; }
 
 cd /usr/src/node-red \
     || { fail "Unable to switch to node-red source directory"; }
