@@ -1,6 +1,7 @@
 #!/bin/bash
 
-NR_DXL=@opendxl/node-red-contrib-dxl
+NR_DXL=@opendxl/node-red-contrib-dxl@0.1.2
+NR_CONFIG=node-red-contrib-config@1.1.2
 NR_PY2_ENV=node-red-py2-env
 
 #
@@ -37,6 +38,16 @@ else
     echo "${NR_DXL} is already installed, skipping."
 fi
 
+npm list --depth 1 ${NR_CONFIG} > /dev/null 2>&1
+OUT=$?
+if [ $OUT -ne 0 ];then
+    echo "Installing ${NR_CONFIG}..."
+    npm install ${NR_CONFIG} --save \
+        || { fail "Unable to install ${NR_CONFIG}"; }
+else
+    echo "${NR_CONFIG} is already installed, skipping."
+fi
+
 if [ ! -f ${NR_PY2_ENV}/bin/activate ];then
     echo "Creating Python virtual environment..."
     python -m virtualenv ${NR_PY2_ENV} \
@@ -51,4 +62,3 @@ cd /usr/src/node-red \
 
 # Start Node-RED
 npm start -- --userDir /data
-
