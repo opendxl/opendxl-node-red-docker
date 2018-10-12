@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NR_DXL=@opendxl/node-red-contrib-dxl@0.1.2
+NR_DXL=@opendxl/node-red-contrib-dxl@0.1.3
 NR_CONFIG=node-red-contrib-config@1.1.2
 NR_PY2_ENV=node-red-py2-env
 
