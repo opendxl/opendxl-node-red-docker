@@ -117,7 +117,7 @@ fi
 
 if [ ! -f ${NR_PY2_ENV}/bin/activate ];then
     echo "Creating Python virtual environment..."
-    python -m virtualenv ${NR_PY2_ENV} \
+    python -m virtualenv --always-copy  ${NR_PY2_ENV} \
         || { fail "Unable to create Python virtual environment."; }
 fi
 
