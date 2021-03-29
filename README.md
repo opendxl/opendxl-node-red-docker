@@ -1,5 +1,5 @@
 # OpenDXL Node-RED Docker
-[![Docker Build Status](https://img.shields.io/docker/build/opendxl/opendxl-node-red-docker.svg)](https://hub.docker.com/r/opendxl/opendxl-node-red-docker/)
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/opendxl/opendxl-node-red-docker.svg)](https://hub.docker.com/r/opendxl/opendxl-node-red-docker/)
 
 ## Overview
 
